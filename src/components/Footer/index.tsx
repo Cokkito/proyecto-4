@@ -1,4 +1,5 @@
-import { Paper, Container, Box, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
+import { StyledDiv } from './styles';
 
 function Footer() {
 	return (
@@ -13,27 +14,16 @@ function Footer() {
 			square
 			variant='outlined'
 		>
-			<Container maxWidth='lg'>
-				<Box
-					sx={{
-						flexGrow: 1,
-						justifyContent: 'center',
-						display: 'flex',
-						my: 1,
-					}}
-				/>
-
-				<Box
-					sx={{
-						flexGrow: 1,
-						justifyContent: 'center',
-						display: 'flex',
-						mb: 2,
-					}}
-				>
-					<Typography variant='caption'>Jorge Mario Mora Gutierrez</Typography>
-				</Box>
-			</Container>
+			<StyledDiv>
+				<Typography variant='caption'>
+					Jorge Mario Mora Gutierrez - 220336617
+				</Typography>
+				<Typography variant='caption'>
+					Conceptualización de servicios en la nube
+				</Typography>
+				<Typography variant='caption'>3.2. Sitio Web sencillo</Typography>
+				<Typography variant='caption'>jorgemg354@gmail.com</Typography>
+			</StyledDiv>
 		</Paper>
 	);
 }
