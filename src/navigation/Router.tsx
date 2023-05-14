@@ -1,7 +1,7 @@
 import RouterConfig from './RouterConfig';
 
 function Router() {
-  return <RouterConfig />;
+	return <RouterConfig />;
 }
 
 export default Router;
