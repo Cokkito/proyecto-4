@@ -39,7 +39,7 @@ function ResponsiveAppBar() {
 	};
 
 	return (
-		<AppBar position='sticky'>
+		<AppBar position='sticky' sx={{ height: '7vh' }}>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
 					<StoreRounded />
