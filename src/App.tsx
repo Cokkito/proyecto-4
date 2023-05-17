@@ -4,22 +4,29 @@ import './App.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { PaletteMode } from '@mui/material';
-
-const getTheme = (palette: PaletteMode) => {
-	return createTheme({
-		palette: {
-			mode: palette,
-		},
-	});
-};
+import { useSelector } from 'react-redux';
+import { RootState } from 'redux/store';
+import SnackbarProvider from 'components/SnackbarProvider';
 
 function App() {
+	const theme = useSelector((state: RootState) => state.settingsScreen.theme);
+
+	const getTheme = (palette: PaletteMode) => {
+		return createTheme({
+			palette: {
+				mode: palette,
+			},
+		});
+	};
+
 	return (
-		<ThemeProvider theme={getTheme('dark')}>
+		<ThemeProvider theme={getTheme(theme)}>
 			<CssBaseline />
-			<BrowserRouter>
-				<Router />
-			</BrowserRouter>
+			<SnackbarProvider>
+				<BrowserRouter>
+					<Router />
+				</BrowserRouter>
+			</SnackbarProvider>
 		</ThemeProvider>
 	);
 }

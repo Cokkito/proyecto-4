@@ -1,4 +1,5 @@
 import MainLayout from 'components/MainLayout';
+
 import HomeView from './HomeView';
 
 function Home() {

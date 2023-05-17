@@ -1,6 +1,6 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import { MainSection } from './styles';
+import { Container, Row, ScreenContainer, ScreenContent } from './styles';
 
 interface Props {
 	selectedView: any;
@@ -9,9 +9,15 @@ interface Props {
 function MainLayout({ selectedView }: Props) {
 	return (
 		<>
-			<Header />
-			<MainSection className='App-header'>{selectedView}</MainSection>
-			<Footer />
+			<Container square>
+				<Header />
+				<Row>
+					<ScreenContainer>
+						<ScreenContent>{selectedView}</ScreenContent>
+						<Footer />
+					</ScreenContainer>
+				</Row>
+			</Container>
 		</>
 	);
 }
