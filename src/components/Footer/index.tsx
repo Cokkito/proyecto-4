@@ -4,12 +4,15 @@ import { useDispatch, useStore } from 'react-redux';
 import { setTheme } from 'redux/reducers/settingsScreen';
 import { RootState } from 'redux/store';
 import { FacebookRounded, Instagram, Twitter } from '@mui/icons-material';
+import Rating from 'components/Rating';
+import { useLocation } from 'react-router-dom';
 
 function Footer() {
 	const dispatch = useDispatch();
 	const store = useStore();
 	const storeData = store.getState() as RootState;
 	const { theme } = storeData.settingsScreen;
+	const location = useLocation();
 
 	const toggleTheme = () => {
 		const themeToSet = theme === 'light' ? 'dark' : 'light';
@@ -59,6 +62,9 @@ function Footer() {
 						<Twitter />
 					</ColoredURL>
 				</StyledHorizonntalDiv>
+			</StyledDiv>
+			<StyledDiv>
+				<Rating pagePath={location.pathname} />
 			</StyledDiv>
 		</Paper>
 	);

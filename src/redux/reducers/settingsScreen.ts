@@ -1,12 +1,13 @@
 import { PaletteMode } from '@mui/material';
 import { createSlice } from '@reduxjs/toolkit';
-import { ERoles } from 'types';
+import { ERoles, IRatings } from 'types';
 
 interface State {
 	theme: PaletteMode;
 	email: string;
 	name: string;
 	role: ERoles;
+	ratings: IRatings;
 }
 
 const initialState: State = {
@@ -14,6 +15,11 @@ const initialState: State = {
 	email: '',
 	name: '',
 	role: ERoles.default,
+	ratings: {
+		main: 0,
+		info: 0,
+		faq: 0,
+	},
 };
 
 export const settingsScreen = createSlice({

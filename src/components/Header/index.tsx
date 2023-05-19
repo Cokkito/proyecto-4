@@ -19,6 +19,7 @@ import Login from 'components/Login';
 import { setLoginModalVisibility } from 'redux/reducers/loginScreen';
 import { useLoginUserMutation } from 'services/apis/userApi';
 import { resetSettings, setSettings } from 'redux/reducers/settingsScreen';
+import { pages } from './data';
 
 function Header() {
 	const { name, email } = useSelector(
@@ -86,12 +87,6 @@ function Header() {
 			});
 		}
 	};
-
-	const pages = [
-		{ key: 'Inicio', route: '/' },
-		{ key: 'Conócenos', route: '/info' },
-		{ key: 'FAQs Blog', route: '/faq' },
-	];
 
 	const settings = [{ key: 'Logout', action: logout }];
 

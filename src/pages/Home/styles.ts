@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
-export const VideoContainer = styled.div`
-	background: linear-gradient(#e66465, #9198e5);
+export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	padding: 40px;
+	align-self: center;
 `;

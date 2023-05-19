@@ -5,6 +5,7 @@ export const StyledDiv = styled.div`
 	flex-direction: column;
 	text-align: center;
 	padding: 0px 100px 0px 100px;
+	margin-top: 16px;
 `;
 
 export const StyledHorizonntalDiv = styled.div`
