@@ -90,6 +90,7 @@ function Header() {
 	const pages = [
 		{ key: 'Inicio', route: '/' },
 		{ key: 'Conócenos', route: '/info' },
+		{ key: 'FAQs Blog', route: '/faq' },
 	];
 
 	const settings = [{ key: 'Logout', action: logout }];

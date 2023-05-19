@@ -1,8 +1,9 @@
 import { Paper, Switch, Typography } from '@mui/material';
-import { StyledDiv } from './styles';
+import { ColoredURL, StyledDiv, StyledHorizonntalDiv } from './styles';
 import { useDispatch, useStore } from 'react-redux';
 import { setTheme } from 'redux/reducers/settingsScreen';
 import { RootState } from 'redux/store';
+import { FacebookRounded, Instagram, Twitter } from '@mui/icons-material';
 
 function Footer() {
 	const dispatch = useDispatch();
@@ -22,6 +23,9 @@ function Footer() {
 				position: 'sticky',
 				bottom: 0,
 				backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.09))`,
+				display: 'flex',
+				flexDirection: 'row',
+				placeContent: 'center',
 			}}
 			component='footer'
 			square
@@ -39,6 +43,22 @@ function Footer() {
 						color='secondary'
 					/>
 				</div>
+			</StyledDiv>
+			<StyledDiv>
+				<Typography variant='caption'>
+					Visita nuestras redes sociales!
+				</Typography>
+				<StyledHorizonntalDiv>
+					<ColoredURL href='https:www.facebook.com' target='_blank'>
+						<FacebookRounded />
+					</ColoredURL>
+					<ColoredURL href='https:www.instagram.com' target='_blank'>
+						<Instagram />
+					</ColoredURL>
+					<ColoredURL href='https:www.twitter.com' target='_blank'>
+						<Twitter />
+					</ColoredURL>
+				</StyledHorizonntalDiv>
 			</StyledDiv>
 		</Paper>
 	);
