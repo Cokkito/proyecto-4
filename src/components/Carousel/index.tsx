@@ -53,7 +53,7 @@ function Carousel() {
 	};
 
 	return (
-		<Box sx={{ maxWidth: 600, flexGrow: 1 }}>
+		<Box sx={{ maxWidth: 600, minWidth: 600, flexGrow: 1 }}>
 			<AutoPlaySwipeableViews
 				axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
 				index={activeStep}
