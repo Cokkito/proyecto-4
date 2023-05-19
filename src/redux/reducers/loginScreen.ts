@@ -1,6 +1,4 @@
-import { PaletteMode } from '@mui/material';
 import { createSlice } from '@reduxjs/toolkit';
-import { ERoles } from 'types';
 
 interface State {
 	isLoginModalOpen: boolean;

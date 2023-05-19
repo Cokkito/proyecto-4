@@ -49,13 +49,13 @@ function Footer() {
 					Visita nuestras redes sociales!
 				</Typography>
 				<StyledHorizonntalDiv>
-					<ColoredURL href='https:www.facebook.com' target='_blank'>
+					<ColoredURL href='https://www.facebook.com/' target='_blank'>
 						<FacebookRounded />
 					</ColoredURL>
-					<ColoredURL href='https:www.instagram.com' target='_blank'>
+					<ColoredURL href='https://www.instagram.com/' target='_blank'>
 						<Instagram />
 					</ColoredURL>
-					<ColoredURL href='https:www.twitter.com' target='_blank'>
+					<ColoredURL href='https://www.twitter.com/' target='_blank'>
 						<Twitter />
 					</ColoredURL>
 				</StyledHorizonntalDiv>
