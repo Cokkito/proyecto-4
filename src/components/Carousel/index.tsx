@@ -51,7 +51,7 @@ function Carousel() {
 	};
 
 	return (
-		<Box sx={{ maxWidth: 600, minWidth: 600, flexGrow: 1 }}>
+		<Box sx={{ maxWidth: 500, minWidth: 500, flexGrow: 1 }}>
 			<AutoPlaySwipeableViews
 				axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
 				index={activeStep}
@@ -64,9 +64,9 @@ function Carousel() {
 							<Box
 								component='img'
 								sx={{
-									height: 400,
+									height: 300,
 									display: 'block',
-									maxWidth: 600,
+									maxWidth: 500,
 									overflow: 'hidden',
 									width: '100%',
 								}}

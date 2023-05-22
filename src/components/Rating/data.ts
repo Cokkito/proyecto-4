@@ -5,4 +5,5 @@ export const pages = [
 	{ key: 'Galería', route: '/gallery' },
 	{ key: 'Tienda', route: '/shop' },
 	{ key: 'Checkout', route: '/checkout' },
+	{ key: 'Contáctanos', route: '/contact-us' },
 ];

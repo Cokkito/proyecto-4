@@ -14,16 +14,16 @@ function HomeView() {
 			<Container>
 				<ContainerColumn>
 					<iframe
-						width='600'
-						height='400'
+						width='500'
+						height='300'
 						src='https://www.youtube.com/embed/8odbsnTxt5Y'
 						title='YouTube video player'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 						allowFullScreen
 					/>
 					<iframe
-						width='600'
-						height='400'
+						width='500'
+						height='300'
 						src='https://www.youtube.com/embed/etef28WDEEk'
 						title='YouTube video player'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

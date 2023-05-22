@@ -6,6 +6,7 @@ import FAQ from 'pages/FAQ';
 import Gallery from 'pages/Gallery';
 import Shop from 'pages/Shop';
 import Checkout from 'pages/Checkout';
+import ContactUs from 'pages/ContactUs';
 
 import {
 	INFO,
@@ -14,6 +15,7 @@ import {
 	SHOP,
 	GALLERY,
 	CHECKOUT,
+	CONTACT_US,
 } from './constants';
 
 function RouterConfig() {
@@ -25,6 +27,7 @@ function RouterConfig() {
 			<Route path={GALLERY} element={<Gallery />} />
 			<Route path={SHOP} element={<Shop />} />
 			<Route path={CHECKOUT} element={<Checkout />} />
+			<Route path={CONTACT_US} element={<ContactUs />} />
 		</Routes>
 	);
 }
