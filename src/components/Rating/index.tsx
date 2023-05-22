@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import MuiRating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import { pages } from 'components/Header/data';
+import { pages } from './data';
 
 interface Props {
 	pagePath: string;

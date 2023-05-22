@@ -34,7 +34,7 @@ export const pets = [
 		imgURL: 'spa1.png',
 	},
 	{
-		key: 5,
+		key: 6,
 		name: 'Aqui va nombre de mascota',
 		desc: 'Aqui va la descripción de lo que se le hizo',
 		imgURL:

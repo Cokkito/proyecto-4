@@ -1,6 +1,14 @@
 import { Divider, Typography } from '@mui/material';
-import { Container, Section, SizedImg, StyledPaper } from './styles';
+import {
+	Container,
+	Section,
+	SizedImg,
+	StyledLottie,
+	StyledPaper,
+} from './styles';
 import TextBanner from 'components/TextBanner';
+import catAnimation from '../../assets/animations/cat.json';
+import locationAnimation from '../../assets/animations/location.json';
 
 function InfoView() {
 	return (
@@ -29,6 +37,14 @@ function InfoView() {
 							nonnisi. Sui volo quam jam vix dum vice vera loco.
 						</Typography>
 					</StyledPaper>
+					<StyledLottie
+						options={{
+							loop: true,
+							autoplay: true,
+							animationData: catAnimation,
+						}}
+						isClickToPauseDisabled={true}
+					/>
 				</Section>
 				<Divider variant='middle' />
 				<Section>
@@ -73,6 +89,14 @@ function InfoView() {
 							Av República de Brasil 180-B, Cuauhtémoc Nte, 21200 Mexicali, B.C.
 						</Typography>
 					</StyledPaper>
+					<StyledLottie
+						options={{
+							loop: true,
+							autoplay: true,
+							animationData: locationAnimation,
+						}}
+						isClickToPauseDisabled={true}
+					/>
 				</Section>
 			</Container>
 		</>

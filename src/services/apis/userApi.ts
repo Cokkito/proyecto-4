@@ -1,5 +1,6 @@
 import { mainApi } from 'services/mainApi';
 import { ILoginUserResponse, ILoginUserRequest } from './types/users';
+import { manageLoading } from 'utils/apiUtils';
 
 const baseUrl = 'users';
 
@@ -11,6 +12,9 @@ const usersApi = mainApi.injectEndpoints({
 				method: 'POST',
 				body,
 			}),
+			onQueryStarted: (_arg, { dispatch, queryFulfilled }) => {
+				manageLoading(dispatch, queryFulfilled);
+			},
 		}),
 	}),
 	overrideExisting: false,

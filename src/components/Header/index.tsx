@@ -11,21 +11,29 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { PetsRounded } from '@mui/icons-material';
-import { Tooltip, Avatar } from '@mui/material';
+import { PetsRounded, ShoppingCartRounded } from '@mui/icons-material';
+import { Tooltip, Avatar, Badge, Drawer } from '@mui/material';
 import { RootState } from 'redux/store';
 import { useDispatch, useSelector } from 'react-redux';
+
 import Login from 'components/Login';
-import { setLoginModalVisibility } from 'redux/reducers/loginScreen';
+import {
+	setCartVisibility,
+	setLoginModalVisibility,
+	updateCart,
+} from 'redux/reducers/loginScreen';
 import { useLoginUserMutation } from 'services/apis/userApi';
 import { resetSettings, setSettings } from 'redux/reducers/settingsScreen';
+import Cart from 'components/Cart';
+
 import { pages } from './data';
+import { ICartItem } from 'pages/Shop/type';
 
 function Header() {
 	const { name, email } = useSelector(
 		(state: RootState) => state.settingsScreen
 	);
-	const { isLoginModalOpen } = useSelector(
+	const { isLoginModalOpen, isCartOpen, cart } = useSelector(
 		(state: RootState) => state.loginScreen
 	);
 
@@ -52,24 +60,31 @@ function Header() {
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
 	};
-
 	const handleCloseUserMenu = () => {
 		setAnchorElUser(null);
 	};
 
-	const closeLoginModal = () => {
+	const handleCloseLoginModal = () => {
 		dispatch(setLoginModalVisibility(false));
 	};
 
-	const openLoginModal = () => {
+	const handleOpenLoginModal = () => {
 		dispatch(setLoginModalVisibility(true));
+	};
+
+	const handleCloseCart = () => {
+		dispatch(setCartVisibility(false));
+	};
+
+	const handleOpenCart = () => {
+		dispatch(setCartVisibility(true));
 	};
 
 	const login = async (email: string, password: string) => {
 		try {
 			const response = await loginUser({ email, password }).unwrap();
 			dispatch(setSettings(response));
-			closeLoginModal();
+			handleCloseLoginModal();
 		} catch (error: any) {
 			enqueueSnackbar(error.message || error.data || 'Ocurrió un error', {
 				variant: 'error',
@@ -86,6 +101,30 @@ function Header() {
 				variant: 'error',
 			});
 		}
+	};
+
+	const addItem = (itemToAdd: ICartItem) => {
+		const clonedCart: ICartItem[] = JSON.parse(JSON.stringify(cart));
+		const cartItem = clonedCart.find((item) => item.key === itemToAdd.key);
+
+		if (cartItem) cartItem.amount++;
+		else clonedCart.push(itemToAdd);
+		dispatch(updateCart(clonedCart));
+	};
+
+	const removeItem = (key: number) => {
+		const clonedCart: ICartItem[] = JSON.parse(JSON.stringify(cart));
+
+		const reduced = clonedCart.reduce((acc, item) => {
+			if (item.key === key) {
+				if (item.amount === 1) return acc;
+				return [...acc, { ...item, amount: item.amount - 1 }];
+			} else {
+				return [...acc, item];
+			}
+		}, [] as ICartItem[]);
+
+		dispatch(updateCart(reduced));
 	};
 
 	const settings = [{ key: 'Logout', action: logout }];
@@ -183,6 +222,20 @@ function Header() {
 						))}
 					</Box>
 
+					<Box sx={{ padding: '0px 20px 0px 20px' }}>
+						<IconButton color='inherit' onClick={handleOpenCart}>
+							<Badge badgeContent={cart.length} color='secondary'>
+								<ShoppingCartRounded />
+							</Badge>
+						</IconButton>
+					</Box>
+					<Drawer anchor='right' open={isCartOpen} onClose={handleCloseCart}>
+						<Cart
+							cartItems={cart}
+							addToCart={addItem}
+							removeFromCart={removeItem}
+						/>
+					</Drawer>
 					{email ? (
 						<Box sx={{ flexGrow: 0 }}>
 							<Tooltip title='Open settings'>
@@ -216,11 +269,11 @@ function Header() {
 					) : (
 						<Button
 							variant='outlined'
-							onClick={openLoginModal}
+							onClick={handleOpenLoginModal}
 							sx={{
 								color: 'white',
 								borderColor: 'white',
-								':hover': { color: 'blue', borderColor: 'blue' },
+								':hover': { color: 'white', borderColor: 'white' },
 							}}
 						>
 							LOGIN
@@ -228,7 +281,9 @@ function Header() {
 					)}
 				</Toolbar>
 			</Container>
-			{isLoginModalOpen && <Login onSumbit={login} onClose={closeLoginModal} />}
+			{isLoginModalOpen && (
+				<Login onSumbit={login} onClose={handleCloseLoginModal} />
+			)}
 		</AppBar>
 	);
 }

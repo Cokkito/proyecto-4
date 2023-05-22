@@ -7,6 +7,7 @@ import { PaletteMode } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { RootState } from 'redux/store';
 import SnackbarProvider from 'components/SnackbarProvider';
+import FullScreenLoading from 'components/FullScreenLoading';
 
 function App() {
 	const theme = useSelector((state: RootState) => state.settingsScreen.theme);
@@ -24,6 +25,7 @@ function App() {
 			<CssBaseline />
 			<SnackbarProvider>
 				<BrowserRouter>
+					<FullScreenLoading />
 					<Router />
 				</BrowserRouter>
 			</SnackbarProvider>
