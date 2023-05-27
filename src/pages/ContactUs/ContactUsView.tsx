@@ -1,5 +1,6 @@
 import { Button, Grid, TextField } from '@mui/material';
 import TextBanner from 'components/TextBanner';
+import assets from '../../assets/index';
 
 function ContactUsView() {
 	return (
@@ -51,16 +52,9 @@ function ContactUsView() {
 						</Button>
 					</Grid>
 				</Grid>
-				<Grid
-					item
-					sm={6}
-					sx={{
-						backgroundPosition: 'center',
-						backgroundRepeat: 'no-repeat',
-						backgroundImage:
-							'url(https://media.istockphoto.com/id/145919344/es/foto/perro-operador-de-soporte.jpg?s=612x612&w=0&k=20&c=XZOFRWhrKQCG-yLv8BGB_-2eZA6uQkXsXRu_n4AzUYQ=)',
-					}}
-				/>
+				<Grid item sm={6}>
+					<img src={assets.pets1} />
+				</Grid>
 			</Grid>
 		</>
 	);

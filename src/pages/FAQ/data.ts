@@ -1,11 +1,12 @@
+import assets from '../../assets/index';
+
 export const featuredPosts = [
 	{
 		title: 'FAQ 1',
 		date: 'Nov 12',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image:
-			'https://d.newsweek.com/en/full/1936219/cat-spa.webp?w=790&f=e1219143b5e7e0b664f061a32112ec01',
+		image: assets.perroBaño2,
 		imageLabel: 'Image Text',
 	},
 	{
@@ -13,8 +14,8 @@ export const featuredPosts = [
 		date: 'Nov 11',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image:
-			'https://d.newsweek.com/en/full/1936219/cat-spa.webp?w=790&f=e1219143b5e7e0b664f061a32112ec01',
+		image: assets.perroBaño2,
+
 		imageLabel: 'Image Text',
 	},
 	{
@@ -22,8 +23,7 @@ export const featuredPosts = [
 		date: 'Nov 11',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image:
-			'https://d.newsweek.com/en/full/1936219/cat-spa.webp?w=790&f=e1219143b5e7e0b664f061a32112ec01',
+		image: assets.perroBaño2,
 		imageLabel: 'Image Text',
 	},
 	{
@@ -31,8 +31,7 @@ export const featuredPosts = [
 		date: 'Nov 11',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image:
-			'https://d.newsweek.com/en/full/1936219/cat-spa.webp?w=790&f=e1219143b5e7e0b664f061a32112ec01',
+		image: assets.perroBaño2,
 		imageLabel: 'Image Text',
 	},
 	{
@@ -40,8 +39,7 @@ export const featuredPosts = [
 		date: 'Nov 11',
 		description:
 			'This is a wider card with supporting text below as a natural lead-in to additional content.',
-		image:
-			'https://d.newsweek.com/en/full/1936219/cat-spa.webp?w=790&f=e1219143b5e7e0b664f061a32112ec01',
+		image: assets.perroBaño2,
 		imageLabel: 'Image Text',
 	},
 ];

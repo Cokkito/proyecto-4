@@ -7,29 +7,18 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import assets from '../../assets/index';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
 	{
 		label: 'cat1',
-		imgPath:
-			'https://cuponassets.cuponatic-latam.com/backendCo/uploads/imagenes_descuentos/194415/f4cb95da35bec000c91598c0ca910a9515aeb559.XL2.jpg',
+		imgPath: assets.perroCarrusel1,
 	},
 	{
 		label: 'cat2',
-		imgPath:
-			'https://speedy.uenicdn.com/f900a037-d1b2-4521-bd5e-1220c1cf25cc/c512_a/image/upload/v1542044383/category/shutterstock_715900171.jpg',
-	},
-	{
-		label: 'dog1',
-		imgPath:
-			'https://www.sparelajarse.com/sites/default/files/styles/large/public/2021-05/spas-balnearios-perros.jpg?itok=vkQ4wCtN',
-	},
-	{
-		label: 'dog2',
-		imgPath:
-			'https://www.infobae.com/new-resizer/h7QohScF5oZeqXPFc1Ud5kOpcSA=/768x432/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/12/21173751/perro-spa.jpg',
+		imgPath: assets.mascotasCarrusel,
 	},
 ];
 
